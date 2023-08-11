@@ -10,7 +10,7 @@ def print_names():
         if name[:2] == '__':
             pass
         else:
-            print("{:s}".format(i))
+            print("{:s}".format(name))
 
 
 if __name__ == "__main__":
