@@ -8,8 +8,8 @@ def calculator(argv):
     argc = len(argv) - 1
 
     if argc != 3:
-        print("Usage: ./{:s} <a> <operator> <b>".format(argv[0]))
-        sys.exit(1)
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        exit(1)
 
     a = int(argv[1])
     b = int(argv[3])
@@ -29,7 +29,7 @@ def calculator(argv):
 
         else:
             print("Unknown operator. Available operators: +, -, * and /")
-            sys.exit(1)
+            exit(1)
     print("{:d} {:s} {:d} = {:d}".format(a, argv[2], b, result))
 
 
