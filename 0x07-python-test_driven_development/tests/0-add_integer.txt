@@ -1,0 +1,96 @@
+Test for a python function that adds to integers together
+
+add_integer(a, b=98)
+
+::
+    a and b must be integers
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+    >>> add_integer(2, 3)
+    5
+
+    >>> add_integer(-3, 2)
+    -1
+
+    >>> add_integer(-2, -3)
+    -5
+
+::
+    a and b must be casted to integers if they're float
+
+    >>> add_integer(3.0, 2.0)
+    5
+
+    >>> add_integer(2.1, 3.2)
+    5
+
+    >>> add_integer(3.3, 2.9)
+    5
+
+    >>> add_integer(-2.0, 3.0)
+    1
+
+    >>> add_integer(-3.5, -2.9)
+    -5
+
+    >>> add_integer(-0.2, 0.3)
+    0
+
+::
+    a and be can be of mixed types
+
+    >>> add_integer(3, 0.2)
+    3
+
+    >>> add_integer(2.0, 3)
+    5
+
+::
+    b is optional
+
+    >>> add_integer(3)
+    101
+
+::
+    both parameters must not be a non-integer or non-float type
+
+    >>> add_integer("hello", 2)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(3.0, "world")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer("hello", "world")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+::
+    over flow error when infinity is used
+
+    >>> add_integer(2, float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+::
+    value error when NaN is used
+
+    >>> add_integer(2, float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+::
+    converting float string to int
+
+    >>> add_integer(2, float('int'))
+    Traceback (most recent call last):
+    ValueError: could not convert string to float: 'int'
+
+::
+    invalid literal usage
+
+    >>> add_integer(2, int('inf'))
+    Traceback (most recent call last):
+    ValueError: invalid literal for int() with base 10: 'inf'
