@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 
-''' a module to add two operands together '''
+'''
+    a module
+    to add
+    two operands together
+'''
 
 
 def add_integer(a, b=98):
