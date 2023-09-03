@@ -1,0 +1,37 @@
+test case for a python function to print first name and last name
+
+::
+    first name and last name must be strings
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("Junior", "Ohanyere")
+    My name is Junior Ohanyere
+
+    >>> say_my_name("JUNIOR", "OHANYERE")
+    My name is JUNIOR OHANYERE
+
+    >>> say_my_name("JUNIOR", "1")
+    My name is JUNIOR 1
+
+    >>> say_my_name("JUNIOR", 3)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: last_name must be a string
+
+    >>> say_my_name(19, "OHANYERE")
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: first_name must be a string
+
+::
+    last name is optional
+
+    >>> say_my_name("TwinJ")
+    My name is TwinJ 
+
+::
+    the parameter must be string!
+    >>> say_my_name(0)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: first_name must be a string
