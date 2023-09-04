@@ -1,0 +1,36 @@
+# test case for a python function that prints a string
+
+::
+    text must be a string
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation(0)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: text must be a string
+
+    >>> text_indentation(["hello"], ["world"])
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+    >>> text_indentation(["hello"])
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: text must be a string
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: text must be a string
+
+::
+    no spaces at the start of the line
+
+    >>> text_indentation(" hello world.")
+    hello world.
+    <BLANKLINE>
+
+    >>> text_indentation(" hello world.   ")
+    hello world.
+    <BLANKLINE>
