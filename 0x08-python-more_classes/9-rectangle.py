@@ -21,9 +21,9 @@ class Rectangle:
                 height (int): height of the rectangle.
         '''
 
-        self.height = height
-        self.width = width
-        type(self).number_of_instances += 1
+        self.__height = height
+        self.__width = width
+        Rectangle.number_of_instances += 1
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -36,7 +36,7 @@ class Rectangle:
         '''
 
         if not isinstance(rect_1, Rectangle):
-            raise TypeError("rect_1 must be an instance of Rectangel")
+            raise TypeError("rect_1 must be an instance of Rectangle")
 
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
@@ -44,6 +44,18 @@ class Rectangle:
         if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        '''
+            creates a rectangle of equal sides resulting in a square
+
+            Args:
+                cls (Rectangle): instance of rectangle
+                size (int): the size of the rectangle (optional)
+        '''
+
+        return cls(size, size)
 
     @property
     def width(self):
@@ -138,5 +150,5 @@ class Rectangle:
             deletes a rectangle and prints a farewell message
         '''
 
-        type(self).number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
