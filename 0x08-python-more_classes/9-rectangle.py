@@ -55,7 +55,7 @@ class Rectangle:
                 size (int): the size of the rectangle (optional)
         '''
 
-        return cls(size, size)
+        return Rectangle(size, size)
 
     @property
     def width(self):
