@@ -25,6 +25,17 @@ class Rectangle:
         self.__width = width
         Rectangle.number_of_instances += 1
 
+    @classmethod
+    def square(cls, size=0):
+        '''
+            creates a rectangle with equal sides resulting in a square
+
+            Args:
+                cls (Rectangle): the new rectangle to create
+                size (int): the size of the rectangle (optional)
+        '''
+        return cls(size, size)
+
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         '''
@@ -44,18 +55,6 @@ class Rectangle:
         if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
-
-    @classmethod
-    def square(cls, size=0):
-        '''
-            creates a rectangle of equal sides resulting in a square
-
-            Args:
-                cls (Rectangle): instance of rectangle
-                size (int): the size of the rectangle (optional)
-        '''
-
-        return Rectangle(size, size)
 
     @property
     def width(self):
