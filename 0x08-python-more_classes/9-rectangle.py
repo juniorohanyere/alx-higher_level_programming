@@ -35,9 +35,9 @@ class Rectangle:
                 size (int): the size of the rectangle (optional)
         '''
 
-        if size < 0:
-            raise ValueError("width must be >= 0")
-        return cls(size, size)
+        cls.__height = size
+        cls.__width = size
+        return Rectangle(cls.__width, cls.__height)
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
