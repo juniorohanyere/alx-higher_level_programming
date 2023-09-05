@@ -34,6 +34,9 @@ class Rectangle:
                 cls (Rectangle): the new rectangle to create
                 size (int): the size of the rectangle (optional)
         '''
+
+        if size < 0:
+            raise ValueError("width must be >= 0")
         return cls(size, size)
 
     @staticmethod
