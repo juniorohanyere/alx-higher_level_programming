@@ -35,9 +35,10 @@ class Rectangle:
                 size (int): the size of the rectangle (optional)
         '''
 
-        cls.__height = size
+        cls = Rectangle()
         cls.__width = size
-        return Rectangle(cls.__width, cls.__height)
+        cls.__height = size
+        return cls
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
