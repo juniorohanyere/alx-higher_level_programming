@@ -1,4 +1,4 @@
-# test case for a base geometry class
+test case for a base geometry class
 
 ::
     value of name must be an integer
