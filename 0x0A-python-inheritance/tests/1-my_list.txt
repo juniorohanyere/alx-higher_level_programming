@@ -1,0 +1,14 @@
+# test case for a class that prints a list in sorted ascending order
+
+::
+    
+    >>> my_list = __import__("1-my_list").MyList()
+    >>> my_list.append(6)
+    >>> my_list.append(1)
+    >>> my_list.append(7)
+    >>> my_list.append(0)
+    >>> my_list.append(3)
+    >>> print(my_list)
+    [6, 1, 7, 0, 3]
+    >>> my_list.print_sorted()
+    [0, 1, 3, 6, 7]
