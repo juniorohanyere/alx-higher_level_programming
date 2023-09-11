@@ -31,7 +31,7 @@ class BaseGeometry:
                     raise ValueError if @value is less than or equals zero
         '''
 
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("{:s} must be an integer".format(name))
 
         if value <= 0:
