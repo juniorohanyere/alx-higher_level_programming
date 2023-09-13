@@ -23,7 +23,7 @@ def append_after(filename="", search_string="", new_string=""):
         lines = file.readlines()
 
         for line in lines:
-            if line.find(search_string) != -1:
+            if line.find(search_string) is not -1:
                 lines.insert(i + 1, new_string)
 
             i += 1
