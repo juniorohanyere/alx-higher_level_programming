@@ -195,15 +195,21 @@ class Rectangle(Base):
                                                           self.__width,
                                                           self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         '''
             update - assigns an argument to each attribute
 
             Args:
-                args: varible list of non-keyword arguments
+                args: varible list of non-keyworded arguments
+                kwargs: variable list of keyworded arguments
 
             Return: return nothing
         '''
+
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                self.__setattr__(key, value)
+            return
 
         try:
             self.id = args[0]
