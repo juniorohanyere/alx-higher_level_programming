@@ -57,6 +57,7 @@ class Rectangle(Base):
             Return: return nothing
         '''
 
+        self.is_valid("width", value)
         self.__width = value
 
     @property
@@ -80,6 +81,7 @@ class Rectangle(Base):
             Return: return nothing
         '''
 
+        self.is_valid("height", value)
         self.__height = value
 
     @property
@@ -103,6 +105,7 @@ class Rectangle(Base):
             Return: return nothing
         '''
 
+        self.is_valid("x", value)
         self.__x = value
 
     @property
@@ -126,4 +129,30 @@ class Rectangle(Base):
             Return: return nothing
         '''
 
+        self.is_valid("y", value)
         self.__y = value
+
+    @staticmethod
+    def is_valid(name, value):
+        '''
+            is_valid - validates the value of a setter
+
+            Args:
+                name (str): name of the setter function
+                value (int): value of the setter
+
+            Return: raise TypeError if @value is not an integer
+                    raise ValueError if width or height is under or equals zero
+                    raise ValueError if x or y is under zero
+        '''
+
+        if type(value) != int:
+            raise TypeError("{:s} must be an integer".format(name))
+
+        if name == "width" or name == "height":
+            if value <= 0:
+                raise ValueError("{:s} must be > 0".format(name))
+
+        elif value < 0:
+            raise ValueError("{:s} must be >= 0".format(name))
+
