@@ -22,7 +22,7 @@ class Base:
             Return: return nothing
         '''
 
-        if id != None:
+        if id is not None:
             self.id = id
 
         else:

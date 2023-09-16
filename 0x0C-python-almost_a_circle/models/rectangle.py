@@ -156,7 +156,6 @@ class Rectangle(Base):
         elif value < 0:
             raise ValueError("{:s} must be >= 0".format(name))
 
-
     def area(self):
         '''
             area - area of a rectangle (l * b)
@@ -165,3 +164,20 @@ class Rectangle(Base):
         '''
 
         return (self.__width * self.__height)
+
+    def display(self):
+        '''
+            display - prints in stdout the Rectangle instance with the
+                      the character #
+
+            Return: return nothing
+        '''
+
+        rect = ""
+
+        print("\n" * self.__y, end='')
+
+        for i in range(self.__height):
+            rect += (" " * self.__x) + ("#" * self.__width) + "\n"
+
+        print(rect, end='')
