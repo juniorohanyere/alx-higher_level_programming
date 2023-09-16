@@ -181,3 +181,16 @@ class Rectangle(Base):
             rect += (" " * self.__x) + ("#" * self.__width) + "\n"
 
         print(rect, end='')
+
+    def __str__(self):
+        '''
+            __str__ - prints in str format (override the original str mathod
+
+            Return: return some other string
+        '''
+
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+                                                          self.id, self.__x,
+                                                          self.__y,
+                                                          self.__width,
+                                                          self.__height)
