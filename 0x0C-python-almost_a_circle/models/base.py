@@ -114,3 +114,31 @@ class Base:
         rect.update(**dictionary)
 
         return (rect)
+
+    @classmethod
+    def load_from_file(cls):
+        '''
+            load_from_file - retrieves a list of all instances
+
+            Args:
+                cls: the class name
+
+            Return: return the list of all instances
+        '''
+
+        filename = cls.__name__ + ".json"
+
+        try:
+            with open(filename, encoding="utf-8") as file:
+                new_string = cls.from_json_string(file.read())
+
+        except Exception:
+            return []
+
+        list_instances = []
+
+        for list_instance in new_string:
+            tmp_instance = cls.create(**list_instance)
+            list_instances.append(tmp_instance)
+
+        return (list_instances)
