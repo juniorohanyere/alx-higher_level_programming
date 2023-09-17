@@ -71,3 +71,21 @@ class Base:
 
         with open(filename, 'w') as file:
             json.dump(new_string, file)
+
+    @staticmethod
+    def from_json_string(json_string):
+        '''
+            from_json_string - retrieves a list of json string representation
+
+            Args:
+                json_string (list of dict): string representing a list of
+                                            dictionaries
+
+            Return: return an empty list if @json_string is None or empty
+                    return @json_string otherwise
+        '''
+
+        if json_string is None or len(json_string) == 0:
+            return []
+
+        return json.loads(json_string)
