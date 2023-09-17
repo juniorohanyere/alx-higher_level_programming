@@ -61,5 +61,5 @@ class Square(Rectangle):
             Return: return a formatted str
         '''
 
-        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x, self.y,
-                                                       self.width)
+        return "[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x,
+                                                         self.y, self.width)
