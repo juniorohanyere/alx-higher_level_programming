@@ -29,10 +29,10 @@ class Rectangle(Base):
             Return: return nothing
         '''
 
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
         super().__init__(id)
 
@@ -228,6 +228,6 @@ class Rectangle(Base):
             Return: return the dictionary representation of the rectangle
         '''
 
-        return {"x": getattr(self, "x"), "y": getattr(self, "y"),
-                "height": getattr(self, "height"),
-                "width": getattr(self, "width")}
+        return {"x": getattr(self, "x"), "width": getattr(self, "width"),
+                "id": getattr(self, "id"), "height": getattr(self, "height"),
+                "y": getattr(self, "y")}
