@@ -7,6 +7,7 @@
 import json
 import csv
 
+
 class Base:
     '''
         Base - a base class function
@@ -177,9 +178,9 @@ class Base:
                     new_string = ""
                     list_item = list_item.to_dictionary()
                     new_string += (str(list_item["id"]) + "," +
-                               str(list_item["size"]) + "," +
-                               str(list_item["x"]) + "," +
-                               str(list_item["y"]))
+                                   str(list_item["size"]) + "," +
+                                   str(list_item["x"]) + "," +
+                                   str(list_item["y"]))
 
                     wfile.writerow(new_string)
 

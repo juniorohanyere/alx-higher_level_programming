@@ -95,8 +95,8 @@ class TestBase(unittest.TestCase):
             rect_dict = rect.to_dictionary()
             json_dict = Base.to_json_string([rect_dict])
             self.assertEqual(rect_dict, {'x': 2, 'width': 10,
-                                       'id': 1, 'height': 7,
-                                       'y': 8})
+                                         'id': 1, 'height': 7,
+                                         'y': 8})
             self.assertIs(type(rect_dict), dict)
             self.assertIs(type(json_dict), str)
             self.assertEqual(json.loads(json_dict), json.loads('[{"x": 2, '
