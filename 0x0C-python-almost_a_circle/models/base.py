@@ -5,7 +5,7 @@
 '''
 
 import json
-
+import csv
 
 class Base:
     '''
@@ -142,3 +142,56 @@ class Base:
             list_instances.append(tmp_instance)
 
         return (list_instances)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        '''
+            save_to_file_csv - serializes in csv
+
+            Args:
+                cls: the class name
+                list_objs: list objects
+
+            Return: return nothing
+        '''
+
+        filename = cls.__name__ + ".csv"
+
+        with open(filename, "w", newline='', encoding="utf-8") as file:
+            wfile = csv.writer(file, delimiter=" ")
+
+            if cls.__name__ == "Rectangle":
+                for list_item in list_objs:
+                    new_string = ""
+                    list_item = list_item.to_dictionary()
+                    new_string += (str(list_item["id"]) + "," +
+                                   str(list_item["width"]) + "," +
+                                   str(list_item["height"]) + "," +
+                                   str(list_item["x"]) + "," +
+                                   str(list_item["y"]))
+
+                    wfile.writerow(new_string)
+
+            if cls.__name__ == "Square":
+                for list_item in list_objs:
+                    new_string = ""
+                    list_item = list_item.to_dictionary()
+                    new_string += (str(list_item["id"]) + "," +
+                               str(list_item["size"]) + "," +
+                               str(list_item["x"]) + "," +
+                               str(list_item["y"]))
+
+                    wfile.writerow(new_string)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        '''
+            load_from_file_csv - deserializes in csv
+
+            Args:
+                cls: the class name
+
+            Return: return an empty list
+        '''
+
+        return []
