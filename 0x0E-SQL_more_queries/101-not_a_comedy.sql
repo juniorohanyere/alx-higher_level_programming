@@ -6,7 +6,7 @@ SELECT DISTINCT `title`
         ON state.`show_id` = tv_show.`id`
 
         LEFT JOIN `tv_genres` AS genre
-        ON genre.`id` = s.`genre_id`
+        ON genre.`id` = state.`genre_id`
         WHERE tv_show.`title` NOT IN
             (SELECT `title`
                 FROM `tv_shows` AS tv_show
