@@ -5,9 +5,8 @@ function second (myArray) {
 
   let max = myArray[2];
   let secondMax = myArray[3];
-  let i;
 
-  for (i = 2; i < myArray.length; i++) {
+  for (let i = 2; i < myArray.length; i++) {
     if (myArray[i] > max) {
       secondMax = max;
       max = myArray[i];
