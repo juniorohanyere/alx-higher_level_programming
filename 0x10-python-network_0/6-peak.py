@@ -2,6 +2,7 @@
 """peak module that uses the lowest complexity
 """
 
+
 def find_peak(list_of_integers):
     """finds the peak of a given list of integers
 
