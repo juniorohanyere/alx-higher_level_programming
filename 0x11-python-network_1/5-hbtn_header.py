@@ -8,6 +8,6 @@ import sys
 
 
 if __name__ == '__main__':
-    request = requests.(sys.argv[1])
+    request = requests.get(sys.argv[1])
 
     print(request.headers.get('X-Request-Id'))
